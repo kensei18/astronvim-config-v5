@@ -28,6 +28,7 @@ return {
         "cspell",
         "prettierd",
         "goimports",
+        "golangci-lint",
         "tflint",
 
         -- DAP
@@ -57,12 +58,24 @@ return {
             end,
           })
         end,
-        biome = function(source_name, methods)
+        biome = function(_, _)
           null_ls.register(null_ls.builtins.formatting.biome.with {
-            condition = function(utils)
+            condition = function(_)
               return path_utils.has_files({
                 "biome.json",
                 "biome.jsonc",
+              }, vim.fn.getcwd())
+            end,
+          })
+        end,
+        ["golangci-lint"] = function(_, _)
+          null_ls.register(null_ls.builtins.diagnostics.golangci_lint.with {
+            condition = function(_)
+              return path_utils.has_files({
+                ".golangci.yml",
+                ".golangci.yaml",
+                ".golangci.toml",
+                ".golangci.json",
               }, vim.fn.getcwd())
             end,
           })
