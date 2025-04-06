@@ -15,5 +15,8 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+GuiFontName = "RecMonoCasual Nerd Font"
+GuiFontSize = 10
+
 require "lazy_setup"
 require "polish"

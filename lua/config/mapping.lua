@@ -1,6 +1,3 @@
-local guiFontName = "RecMonoCasual Nerd Font"
-local guiFontSize = 10
-
 local maps = {
   -- first key is the mode
   n = {
@@ -46,22 +43,22 @@ local maps = {
     -- GUI font size
     ["<Leader>+"] = {
       function()
-        guiFontSize = guiFontSize + 1
-        vim.opt.guifont = { guiFontName, ":h" .. guiFontSize }
+        GuiFontSize = GuiFontSize + 1
+        vim.opt.guifont = { GuiFontName, ":h" .. GuiFontSize }
       end,
       desc = "Increment Font Size",
     },
     ["<Leader>="] = {
       function()
-        guiFontSize = guiFontSize + 1
-        vim.opt.guifont = { guiFontName, ":h" .. guiFontSize }
+        GuiFontSize = GuiFontSize + 1
+        vim.opt.guifont = { GuiFontName, ":h" .. GuiFontSize }
       end,
       desc = "Increment Font Size",
     },
     ["<Leader>-"] = {
       function()
-        guiFontSize = guiFontSize - 1
-        vim.opt.guifont = { guiFontName, ":h" .. guiFontSize }
+        GuiFontSize = GuiFontSize - 1
+        vim.opt.guifont = { GuiFontName, ":h" .. GuiFontSize }
       end,
       desc = "Decrement Font Size",
     },
