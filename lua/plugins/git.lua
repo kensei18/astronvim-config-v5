@@ -5,7 +5,6 @@ return {
     dependencies = {
       "tyru/open-browser.vim",
     },
-    event = "VeryLazy",
   },
   {
     "FabijanZulj/blame.nvim",
@@ -25,6 +24,7 @@ return {
     config = function()
       require("octo").setup {
         enable_builtin = true,
+        picker = "snacks",
         suppress_missing_scope = {
           projects_v2 = true,
         },
@@ -42,7 +42,6 @@ return {
   },
   {
     "sindrets/diffview.nvim",
-    event = "BufEnter",
     cmd = { "DiffviewOpen" },
     opts = {
       default_args = {

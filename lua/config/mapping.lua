@@ -111,14 +111,12 @@ local maps = {
       desc = "Diffview",
     },
 
-    -- Octo
-    ["<Leader><Leader>g"] = { ":Octo<cr>", desc = "Octo" },
-    ["<Leader>gR"] = { require("utils.github").browse_repo, desc = "Open repo in browser" },
-
     -- open-browser-github
     ["<Leader>go"] = { ":OpenGithubFile<cr><cr>", desc = "Open in Github" },
     ["<Leader>gP"] = { ":OpenGithubPullReq<cr><cr>", desc = "Open Pull Request" },
     ["<Leader>gB"] = { ":!gh browse<cr><cr>", desc = "Browse Github" },
+
+    ["<Leader>gR"] = { require("utils.github").browse_repo, desc = "Open repo in browser" },
 
     -- blame
     -- ["<Leader>gb"] = { ":BlameToggle virtual<cr>", desc = "Toggle virtual blame" },
