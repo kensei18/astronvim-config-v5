@@ -30,3 +30,22 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
   command = "if mode() != 'c' | checktime | endif",
   pattern = { "*" },
 })
+
+-- custom commands
+vim.api.nvim_create_user_command("CpRelFilePath", function()
+  local path = vim.fn.expand "%"
+  vim.fn.setreg("+", path)
+  print("Copied relative path: " .. path)
+end, { nargs = 0 })
+
+vim.api.nvim_create_user_command("CpRelDirPath", function()
+  local path = vim.fn.expand "%:h"
+  vim.fn.setreg("+", path)
+  print("Copied relative path: " .. path)
+end, { nargs = 0 })
+
+vim.api.nvim_create_user_command("CpFilename", function()
+  local path = vim.fn.expand "%:t"
+  vim.fn.setreg("+", path)
+  print("Copied filename: " .. path)
+end, { nargs = 0 })
