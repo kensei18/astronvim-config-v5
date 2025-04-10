@@ -9,6 +9,12 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     lazy = false,
-    config = function() require("oil").setup() end,
+    config = function()
+      require("oil").setup {
+        view_options = {
+          show_hidden = true,
+        },
+      }
+    end,
   },
 }
