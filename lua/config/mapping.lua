@@ -200,8 +200,8 @@ local maps = {
   },
   i = {
     ["<C-p>"] = { function() vim.lsp.buf.signature_help() end, desc = "Signature Help" },
-    ["<C-o>"] = { "<ESC>o" },
-    ["<C-i>"] = { "<ESC>O" },
+    -- ["<C-o>"] = { "<ESC>o" },
+    -- ["<C-i>"] = { "<ESC>O" },
   },
 }
 
