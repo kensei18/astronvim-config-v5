@@ -2,14 +2,6 @@
 return {
   "saghen/blink.cmp",
   opts = {
-    cmdline = {
-      completion = {
-        menu = { auto_show = true },
-      },
-      keymap = {
-        ["<CR>"] = { "select_accept_and_enter", "fallback" },
-      },
-    },
     sources = {
       -- default = { "lazydev", "lsp", "path", "snippets", "buffer" },
       providers = {
