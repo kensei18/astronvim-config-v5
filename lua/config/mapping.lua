@@ -119,28 +119,28 @@ local maps = {
     ["<Leader>fd"] = { name = "With directories" },
     ["<Leader>fdf"] = {
       function()
-        local f = function(dir) Snacks.picker.files { dirs = { dir } } end
+        local f = function(dirs) Snacks.picker.files { dirs = dirs } end
         require("utils.picker").with_search_dirs(f)
       end,
       desc = "Find files",
     },
     ["<Leader>fdF"] = {
       function()
-        local f = function(dir) Snacks.picker.files { dirs = { dir }, ignored = true, hidden = true } end
+        local f = function(dirs) Snacks.picker.files { dirs = dirs, ignored = true, hidden = true } end
         require("utils.picker").with_search_dirs(f)
       end,
       desc = "Find all files",
     },
     ["<Leader>fdw"] = {
       function()
-        local f = function(dir) Snacks.picker.grep { dirs = { dir } } end
+        local f = function(dirs) Snacks.picker.grep { dirs = dirs } end
         require("utils.picker").with_search_dirs(f)
       end,
       desc = "Find words",
     },
     ["<Leader>fdW"] = {
       function()
-        local f = function(dir) Snacks.picker.grep { dirs = { dir }, ignored = true, hidden = true } end
+        local f = function(dirs) Snacks.picker.grep { dirs = dirs, ignored = true, hidden = true } end
         require("utils.picker").with_search_dirs(f)
       end,
       desc = "Find words in all files",

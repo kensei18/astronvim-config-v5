@@ -1,23 +1,19 @@
 local M = {}
 
-function M.with_search_dirs(f, opts)
-  opts = opts == nil and {} or opts
-
+function M.with_search_dirs(f)
   local on_confirm = function(input)
-    local confirm_opts = {}
+    local dirs = {}
 
     if input ~= nil and input ~= "" then
-      local dirs = {}
       for _, dir in ipairs(vim.split(input, " ", { trimempty = true })) do
         table.insert(dirs, dir)
       end
-      confirm_opts = vim.tbl_extend("force", opts, { search_dirs = dirs })
     else
       local dir = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":h")
-      confirm_opts = vim.tbl_extend("force", opts, { search_dirs = { dir } })
+      table.insert(dirs, dir)
     end
 
-    f(confirm_opts)
+    f(dirs)
   end
 
   vim.ui.input({ prompt = "Directories", completion = "file" }, on_confirm)
