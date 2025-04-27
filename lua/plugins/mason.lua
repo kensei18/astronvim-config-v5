@@ -10,7 +10,8 @@ return {
         -- LSP
         "lua-language-server",
         "typescript-language-server",
-        "biome",
+        -- "biome",
+        -- "eslint-lsp",
         "gopls",
         -- "golangci_lint_ls",
         "pyright",
