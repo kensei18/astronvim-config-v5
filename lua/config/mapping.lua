@@ -19,7 +19,9 @@ local maps = {
     -- snacks
     ["gr"] = { function() Snacks.picker.lsp_references() end, desc = "LSP References" },
     ["<Leader>lD"] = {
-      function() Snacks.picker.diagnostics { severity = vim.diagnostic.severity.WARN } end,
+      function()
+        Snacks.picker.diagnostics { severity = { vim.diagnostic.severity.ERROR, vim.diagnostic.severity.WARN } }
+      end,
       desc = "Search Diagnostics",
     },
     ["<Leader>bb"] = {
