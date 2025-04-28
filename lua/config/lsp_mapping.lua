@@ -9,7 +9,7 @@ local maps = {
       desc = "Toggle LSP semantic highlight (buffer)",
       cond = function(client) return client.server_capabilities.semanticTokensProvider and vim.lsp.semantic_tokens end,
     },
-    ["<Leader>lG"] = { function() Snacks.picker.lsp_symbols() end, desc = "Search LSP Symbols" },
+    ["<Leader>lG"] = { function() Snacks.picker.lsp_workspace_symbols() end, desc = "Search LSP Symbols" },
     ["<Leader>lg"] = { name = " Go" },
   },
 }
