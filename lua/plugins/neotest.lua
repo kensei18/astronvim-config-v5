@@ -41,6 +41,10 @@ return {
             },
           },
         },
+        quickfix = {
+          enabled = false,
+          open = false,
+        },
       }
     end,
   },
