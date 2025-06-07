@@ -8,20 +8,22 @@ return {
     require("avante").setup {
       provider = "claude",
       auto_suggestions_provider = "claude",
-      -- cursor_applying_provider = "fastapply",
 
-      claude = {
-        disable_tools = {
-          "list_files",
-          "search_files",
-          "read_file",
-          "create_file",
-          "rename_file",
-          "delete_file",
-          "create_dir",
-          "rename_dir",
-          "delete_dir",
-          "bash",
+      providers = {
+        claude = {
+          -- for MCP
+          disable_tools = {
+            "list_files",
+            "search_files",
+            "read_file",
+            "create_file",
+            "rename_file",
+            "delete_file",
+            "create_dir",
+            "rename_dir",
+            "delete_dir",
+            "bash",
+          },
         },
       },
 
@@ -36,14 +38,14 @@ return {
         -- enable_cursor_planning_mode = true,
       },
 
-      -- vendors = {
-      --   fastapply = {
-      --     __inherited_from = "openai",
-      --     api_key_name = "",
-      --     endpoint = "http://localhost:11434/v1",
-      --     model = "hf.co/Kortix/FastApply-7B-v1.0_GGUF:Q4_K_M",
-      --   },
-      -- },
+      mappings = {
+        suggestion = {
+          accept = "<C-l>",
+          next = "<C-j>",
+          prev = "<C-k>",
+          dismiss = "<C-h>",
+        },
+      },
 
       system_prompt = function()
         local hub = require("mcphub").get_hub_instance()
@@ -56,15 +58,6 @@ return {
           require("mcphub.extensions.avante").mcp_tool(),
         }
       end,
-
-      mappings = {
-        suggestion = {
-          accept = "<C-l>",
-          next = "<C-j>",
-          prev = "<C-k>",
-          dismiss = "<C-h>",
-        },
-      },
     }
   end,
   build = "make",
