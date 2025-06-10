@@ -13,5 +13,10 @@ return {
         },
       },
     },
+    cmdline = {
+      completion = {
+        ghost_text = { enabled = true },
+      },
+    },
   },
 }
