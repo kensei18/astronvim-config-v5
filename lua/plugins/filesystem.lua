@@ -1,6 +1,10 @@
 ---@type LazySpec
 return {
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = function(_, opts) opts.filesystem.hijack_netrw_behavior = "disabled" end,
+  },
+  {
     "stevearc/oil.nvim",
     ---@module 'oil'
     ---@type oil.SetupOpts
