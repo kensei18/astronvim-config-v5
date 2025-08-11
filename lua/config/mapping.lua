@@ -227,13 +227,13 @@ if vim.fn.executable "lazygit" == 1 then
   }
 end
 
-local aiMaps = {
-  ["<Leader>a"] = { name = "AI" },
-}
-
-for k, v in pairs(aiMaps) do
-  maps.n[k] = v
-  maps.x[k] = v
-end
+-- local aiMaps = {
+--   ["<Leader>a"] = { name = "AI" },
+-- }
+--
+-- for k, v in pairs(aiMaps) do
+--   maps.n[k] = v
+--   maps.x[k] = v
+-- end
 
 return maps
