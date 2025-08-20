@@ -46,6 +46,7 @@
   "neotest-golang": { "branch": "main", "commit": "3f0617ee9c3e6fd3d0d88645cd2e1751dad60c1f" },
   "neotest-jest": { "branch": "main", "commit": "46ccc50273838f0b48e3c4814c1c46c0ccfe9edf" },
   "neotest-playwright": { "branch": "master", "commit": "6266945039dac27a354de33d2f2a66e75485d5e9" },
+  "neotest-vitest": { "branch": "main", "commit": "a6099e1fb55a2c2851da3dd0f4d510af9a234c92" },
   "no-neck-pain.nvim": { "branch": "main", "commit": "7bf83d3cfc8f6a120734f4254bbb87928756bea0" },
   "noice.nvim": { "branch": "main", "commit": "0427460c2d7f673ad60eb02b35f5e9926cf67c59" },
   "none-ls.nvim": { "branch": "main", "commit": "5fcb73913a9290f78097e34420fe0e6130c5c33c" },
