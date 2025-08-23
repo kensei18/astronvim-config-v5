@@ -1,6 +1,8 @@
 vim.cmd "language en_US.UTF-8"
 vim.opt.nrformats:append { "alpha" }
 
+vim.cmd "packadd cfilter"
+
 vim.filetype.add {
   filename = {
     [".env"] = "sh",
