@@ -38,6 +38,7 @@ return {
     },
     build = "make tiktoken",
     opts = {
+      model = "gemini-2.5-pro",
       window = {
         layout = "vertical",
         width = 0.3,
