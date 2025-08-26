@@ -11,6 +11,7 @@ return {
       "nvim-neotest/neotest-jest",
       "thenbe/neotest-playwright",
       "marilari88/neotest-vitest",
+      "nvim-neotest/neotest-python",
     },
     config = function()
       local neotest_ns = vim.api.nvim_create_namespace "neotest"
@@ -42,6 +43,7 @@ return {
             },
           },
           require "neotest-vitest" {},
+          require "neotest-python" {},
         },
         quickfix = {
           enabled = false,
