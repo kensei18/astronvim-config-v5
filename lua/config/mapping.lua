@@ -227,13 +227,34 @@ if vim.fn.executable "lazygit" == 1 then
   }
 end
 
--- local aiMaps = {
---   ["<Leader>a"] = { name = "AI" },
--- }
---
--- for k, v in pairs(aiMaps) do
---   maps.n[k] = v
---   maps.x[k] = v
--- end
+for k, v in pairs {
+  ["<Leader>a"] = { name = "AI" },
+} do
+  maps.n[k] = v
+  maps.x[k] = v
+end
+
+for k, v in pairs {
+  -- Claude Code
+  ["<Leader>ac"] = { "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+  ["<Leader>af"] = { "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
+  ["<Leader>ar"] = { "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
+  ["<Leader>aC"] = { "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
+  ["<Leader>am"] = { "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
+  ["<Leader>ab"] = { "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
+  ["<Leader>aa"] = { "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
+  ["<Leader>ad"] = { "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
+
+  -- Copilot Chat
+  ["<Leader>ag"] = { "<cmd>CopilotChat<cr>", desc = "Toggle Copilot Chat" },
+} do
+  maps.n[k] = v
+end
+
+for k, v in pairs {
+  ["<Leader>as"] = { "<cmd>ClaudeCodeSend<cr>", desc = "Send to Claude" },
+} do
+  maps.x[k] = v
+end
 
 return maps
