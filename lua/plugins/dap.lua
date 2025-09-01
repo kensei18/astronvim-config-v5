@@ -29,4 +29,12 @@ return {
       },
     },
   },
+  {
+    "mfussenegger/nvim-dap-python",
+    event = "User AstroFile",
+    config = function()
+      local path = vim.fn.stdpath "data" .. "/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+    end,
+  },
 }
