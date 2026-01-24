@@ -229,21 +229,39 @@ end
 
 for k, v in pairs {
   ["<Leader>a"] = { name = "AI" },
+
+  -- Opencode
+  ["<Leader>aa"] = {
+    function() require("opencode").ask("@this: ", { submit = true }) end,
+    desc = "Ask opencode…",
+  },
+  ["<Leader>ax"] = { function() require("opencode").select() end, desc = "Execute opencode action…" },
+  ["<Leader>ao"] = {
+    function() return require("opencode").operator "@this " end,
+    desc = "Add range to opencode",
+    expr = true,
+  },
 } do
   maps.n[k] = v
   maps.x[k] = v
 end
 
 for k, v in pairs {
-  -- Claude Code
-  -- ["<Leader>ac"] = { "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
-  -- ["<Leader>af"] = { "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
-  -- ["<Leader>ar"] = { "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
-  -- ["<Leader>aC"] = { "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
-  -- ["<Leader>am"] = { "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
-  -- ["<Leader>ab"] = { "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
-  -- ["<Leader>aa"] = { "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
-  -- ["<Leader>ad"] = { "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
+  -- Opencode
+  ["<Leader>at"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
+  ["<Leader>aO"] = {
+    function() return require("opencode").operator "@this " .. "_" end,
+    desc = "Add line to opencode",
+    expr = true,
+  },
+  ["<Leader>au"] = {
+    function() require("opencode").command "session.half.page.up" end,
+    desc = "Scroll opencode up",
+  },
+  ["<Leader>ad"] = {
+    function() require("opencode").command "session.half.page.down" end,
+    desc = "Scroll opencode down",
+  },
 
   -- Copilot Chat
   ["<Leader>ag"] = { "<cmd>CopilotChat<cr>", desc = "Toggle Copilot Chat" },
@@ -252,9 +270,10 @@ for k, v in pairs {
 end
 
 for k, v in pairs {
-  -- ["<Leader>as"] = { "<cmd>ClaudeCodeSend<cr>", desc = "Send to Claude" },
+  -- Opencode
+  ["<Leader>at"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
 } do
-  maps.x[k] = v
+  maps.t[k] = v
 end
 
 return maps
