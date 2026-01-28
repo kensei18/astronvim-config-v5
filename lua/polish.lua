@@ -11,6 +11,8 @@ vim.filetype.add {
   },
 }
 
+vim.api.nvim_set_keymap("t", "<S-Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
+
 if vim.g.neovide then
   vim.g.neovide_input_use_logo = true
 
@@ -21,8 +23,6 @@ if vim.g.neovide then
   vim.api.nvim_set_keymap("c", "<D-v>", "<C-r>+", { noremap = true })
   vim.api.nvim_set_keymap("v", "<D-v>", '"+P', { noremap = true, silent = true })
   vim.api.nvim_set_keymap("t", "<D-v>", '<C-\\><C-n>"+Pi', { noremap = true, silent = true })
-
-  vim.api.nvim_set_keymap("t", "<S-Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 
   vim.api.nvim_set_keymap("n", "<D-n>", ':silent execute "!neovide"<CR>', { noremap = true, silent = true })
 end
