@@ -229,14 +229,15 @@ end
 
 for k, v in pairs {
   ["<Leader>a"] = { name = "AI" },
+  ["<Leader>ao"] = { name = "Opencode" },
 
   -- Opencode
-  ["<Leader>aa"] = {
+  ["<Leader>aoa"] = {
     function() require("opencode").ask("@this: ", { submit = true }) end,
     desc = "Ask opencode…",
   },
-  ["<Leader>ax"] = { function() require("opencode").select() end, desc = "Execute opencode action…" },
-  ["<Leader>ao"] = {
+  ["<Leader>aox"] = { function() require("opencode").select() end, desc = "Execute opencode action…" },
+  ["<Leader>aoo"] = {
     function() return require("opencode").operator "@this " end,
     desc = "Add range to opencode",
     expr = true,
@@ -248,17 +249,17 @@ end
 
 for k, v in pairs {
   -- Opencode
-  ["<Leader>at"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
-  ["<Leader>aO"] = {
+  ["<Leader>aot"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
+  ["<Leader>aoO"] = {
     function() return require("opencode").operator "@this " .. "_" end,
     desc = "Add line to opencode",
     expr = true,
   },
-  ["<Leader>au"] = {
+  ["<Leader>aou"] = {
     function() require("opencode").command "session.half.page.up" end,
     desc = "Scroll opencode up",
   },
-  ["<Leader>ad"] = {
+  ["<Leader>aod"] = {
     function() require("opencode").command "session.half.page.down" end,
     desc = "Scroll opencode down",
   },
@@ -271,7 +272,7 @@ end
 
 for k, v in pairs {
   -- Opencode
-  ["<Leader>at"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
+  ["<Leader>aot"] = { function() require("opencode").toggle() end, desc = "Toggle opencode" },
 } do
   maps.t[k] = v
 end
